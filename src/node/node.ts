@@ -18,6 +18,13 @@ export class Node extends Entity {
         )
     }
 
+    public get center(): Vector2D {
+        return new Vector2D(
+            this.start.x + this.size.x / 2,
+            this.start.y + this.size.y / 2
+        )
+    }
+
     public awake() {
         this.addComponent(new NodeDrawComponent());
         super.awake();

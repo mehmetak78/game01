@@ -7,14 +7,14 @@ export abstract class Entity implements IAwake, IUpdate{
 
 
     private _components: IComponent[] = [];
-    private _entites: Entity[] = [];
+    private _entities: Entity[] = [];
 
     get components(): IComponent[] {
         return this._components;
     }
 
-    get entites(): Entity[] {
-        return this._entites;
+    get entities(): Entity[] {
+        return this._entities;
     }
 
     public addComponent(component: IComponent) {
@@ -63,7 +63,7 @@ export abstract class Entity implements IAwake, IUpdate{
         for (const component of this._components) {
             component.update(deltaTime);
         }
-        for (const entity of this._entites) {
+        for (const entity of this._entities) {
             entity.update(deltaTime);
         }
     }
@@ -72,7 +72,7 @@ export abstract class Entity implements IAwake, IUpdate{
         for (const component of this._components) {
             component.awake();
         }
-        for (const entity of this._entites) {
+        for (const entity of this._entities) {
             entity.awake();
         }
     }

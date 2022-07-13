@@ -1,2 +1,2 @@
 
-export * from './draw'
+export * from './node-draw-component'
